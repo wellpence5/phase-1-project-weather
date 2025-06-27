@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather planner</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <input type="button" id="check-weather" value="Check weather">
+        </div>
+        <form id="location-form">
+        <input type="text" id="location-name" placeholder="Enter your location" required>
+        <button type="submit" id="submit-btn">Check location</button>
+        </form>
+    </header>
+    <main>
+        <div class="current">
+            <div class="show-weather"></div>
+            <div class="print-planner"></div>
+        </div>
+        <div class="hourly">
+            <div class="hourly-forecast"></div>
+        </div>
+    </main>
+</body>
+</html>
