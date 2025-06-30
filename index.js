@@ -18,8 +18,8 @@ async function getLocation() {
     fetchWeather(position.coords.latitude, position.coords.longitude);
   } catch (error) {
     alert('Please enable location access for accurate weather');
-    // Default to New York coordinates if location denied
-    fetchWeather(40.7128, -74.0060);
+    // Default to Nairobi, Kenya coordinates if location denied
+    fetchWeather(-1.28639, 36.81722);
   }
 }
 
@@ -52,7 +52,6 @@ function displayWeather(data, lat, lon) {
       <h2>${current.temperature}°C</h2>
       <p>Wind: ${current.windspeed} km/h</p>
     </div>
-    <img src="getWeatherIcon(current.weathercode)" alt="Weather icon" width="80">
   `;
 
   // Weather advice
@@ -92,7 +91,7 @@ function generateAdvice(current, daily) {
   // Clothing advice
   const maxTemp = daily.temperature_2m_max[0];
   if (maxTemp > 25) advice += '<li>👕 Wear light clothing</li>';
-  else if (maxTemp < 10) advice += '<li>🧥 Wear a warm jacket</li>';
+  else if (maxTemp < 15) advice += '<li>🧥 Wear a warm jacket</li>';
   
   // Rain advice
   if (current.weathercode > 50 && current.weathercode < 70) {
@@ -100,7 +99,7 @@ function generateAdvice(current, daily) {
   }
   
   // UV advice
-  if (current.weathercode < 20) {
+  if (current.weathercode < 29) {
     advice += '<li>🧴 Apply sunscreen (UV index high)</li>';
   }
   
