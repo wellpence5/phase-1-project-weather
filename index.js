@@ -18,7 +18,7 @@ async function getLocation() {
     fetchWeather(position.coords.latitude, position.coords.longitude);
   } catch (error) {
     alert('Please enable location access for accurate weather');
-    // Default to Nairobi, Kenya coordinates if location denied
+    // Default to Nairobi,Kenya coordinates if location denied
     fetchWeather(-1.28639, 36.81722);
   }
 }
@@ -36,7 +36,7 @@ async function fetchWeather(lat, lon) {
 }
 
 function displayWeather(data, lat, lon) {
-  // Get location name (reverse geocoding with free Nominatim API)
+  // Get location nam
   fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
     .then(res => res.json())
     .then(locationData => {
@@ -109,3 +109,40 @@ function generateAdvice(current, daily) {
 
 // Initialize with default location if user doesn't share theirs
 getLocation();
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Check for saved preference or system preference
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (prefersDarkScheme.matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+// Toggle between light/dark
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  // Update button emoji
+  themeToggle.textContent = newTheme === 'dark' ? '🌔' : '🌓';
+}
+
+// Initialize
+initializeTheme();
+
+// Set initial button emoji
+if (document.documentElement.getAttribute('data-theme') === 'dark') {
+  themeToggle.textContent = '🌔';
+}
+
+// Event listener
+themeToggle.addEventListener('click', toggleTheme);
