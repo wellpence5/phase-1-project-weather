@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather planner</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./index.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Weather Planner</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div class="container">
     <header>
-        <div class="container">
-            <input type="button" id="check-weather" value="Check weather">
-        </div>
-        <form id="location-form">
-        <input type="text" id="location-name" placeholder="Enter your location" required>
-        <button type="submit" id="submit-btn">Check location</button>
-        </form>
+      <h1>Daily Weather Planner</h1>
+      <button id="get-weather">Get My Location Weather</button>
+      <p id="location"></p>
     </header>
+
     <main>
-        <div class="current">
-            <div class="show-weather"></div>
-            <div class="print-planner"></div>
-        </div>
-        <div class="hourly">
-            <div class="hourly-forecast"></div>
-        </div>
+      <section class="current">
+        <div id="current-weather"></div>
+        <div id="weather-advice"></div>
+      </section>
+
+      <section class="hourly">
+        <h2>Hourly Forecast</h2>
+        <div id="hourly-forecast" class="scroll-container"></div>
+      </section>
+
+      <button id="print-btn">Print Daily Plan</button>
     </main>
+  </div>
+
+  <script src="./inex.js"></script>
 </body>
 </html>

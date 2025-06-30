@@ -1,0 +1,75 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#location {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.current {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#current-weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#weather-advice {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.hourly {
+  margin-bottom: 30px;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.hour-card {
+  flex: 0 0 auto;
+  width: 120px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button {
+  background: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@media print {
+  button { display: none; }
+  .scroll-container {
+    display: block;
+    overflow: visible;
+  }
+  .hour-card {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
