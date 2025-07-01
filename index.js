@@ -45,7 +45,7 @@ function displayWeather(data, lat, lon) {
       locationDisplay.textContent = `${city}, ${country}`;
     });
 
-  // Current weather
+  // Current location's weather
   const current = data.current_weather;
   currentWeather.innerHTML = `
     <div>
