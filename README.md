@@ -10,4 +10,10 @@ Phase-1-project-weather makes use of an open-source free API open meteo which ca
 
 Link to the hosted github page: https://wellpence5.github.io/phase-1-project-weather/
 
+Project consists of:
+1.index.html
+2.index.js
+3.style.css
+4.README.md
+
 This project was solely made by Alvin Muthomi.
