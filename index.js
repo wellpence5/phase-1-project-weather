@@ -36,7 +36,7 @@ async function fetchWeather(lat, lon) {
 }
 
 function displayWeather(data, lat, lon) {
-  // Get location namee
+  // Get current location
   fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
     .then(res => res.json())
     .then(locationData => {
