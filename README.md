@@ -4,7 +4,7 @@ This project was built as a way to help people know the predicted weather of the
 
 Click the button labeled 'Get my Location Weather' to get your location weather.
 Please allow location access when prompted to allow accurate location results.
-Default location is set to Nairobi, Kenya if an error is occured when trying to get the location.
+Default location has been set to Nairobi, Kenya if an error is occured when trying to get the location.
 
 Phase-1-project-weather makes use of an open-source free API open meteo which can be accessed on this link: https://api.open-meteo.com
 
