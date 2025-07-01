@@ -58,7 +58,7 @@ function displayWeather(data, lat, lon) {
   const advice = generateAdvice(current, data.daily);
   weatherAdvice.innerHTML = advice;
 
-  // Hourly forecastssss
+  // Hourly forecasting
   hourlyForecast.innerHTML = '';
   const now = new Date();
   const currentHour = now.getHours();
