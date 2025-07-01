@@ -36,7 +36,7 @@ async function fetchWeather(lat, lon) {
 }
 
 function displayWeather(data, lat, lon) {
-  // Get location nam
+  // Get location namee
   fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
     .then(res => res.json())
     .then(locationData => {
@@ -124,6 +124,7 @@ function initializeTheme() {
   }
 }
 
+////////////
 // Toggle between light/dark
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
