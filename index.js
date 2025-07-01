@@ -17,7 +17,7 @@ async function getLocation() {
     });
     fetchWeather(position.coords.latitude, position.coords.longitude);
   } catch (error) {
-    alert('Please enable location access for accurate weather');
+    alert('Please enable location access for accurate weather results');
     // Default to Nairobi,Kenya coordinates if location denied
     fetchWeather(-1.28639, 36.81722);
   }
